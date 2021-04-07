@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Contacts from './components/Contacts/Contacts';
+import Form from './components/Contacts/Form/Form';
 
 import './index.css';
 
@@ -8,7 +8,7 @@ class App extends Component {
         console.log(data);
     };
     render() {
-        return <Contacts onSubmit={this.formSubmitHandler} />;
+        return <Form onSubmit={this.formSubmitHandler} />;
     }
 }
 
