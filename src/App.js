@@ -14,17 +14,20 @@ class App extends Component {
         ],
         filter: '',
     };
-    formSubmitHandler = data => {
+    formSubmitHandler = e => {
+        //this.setState({
+        //    contacts: '',
+        //});
         //const {contacts} = this.state;
     };
     render() {
+        const { contacts } = this.state;
         return (
             <div>
                 <h1>Phonebook</h1>
                 <Form onSubmit={this.formSubmitHandler} />
                 <h2>Contacts </h2>
-                <List />
-                
+                <List contacts={contacts} />
             </div>
         );
     }

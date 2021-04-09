@@ -8,6 +8,7 @@ class Form extends Component {
         name: '',
         number: '',
     };
+
     handleChange = e => {
         const { name, value } = e.currentTarget;
         this.setState({ [name]: value });
@@ -23,6 +24,7 @@ class Form extends Component {
 
     render() {
         const { name, number } = this.state;
+
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
