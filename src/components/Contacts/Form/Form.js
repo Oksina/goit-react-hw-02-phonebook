@@ -12,6 +12,7 @@ class Form extends Component {
     handleChange = e => {
         const { name, value } = e.currentTarget;
         this.setState({ [name]: value });
+        
     };
     handleSubmit = e => {
         e.preventDefault();
@@ -24,9 +25,10 @@ class Form extends Component {
 
     render() {
         const { name, number } = this.state;
+        const {handleSubmit, handleChange} = this;
 
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Name
                     <input
@@ -35,8 +37,9 @@ class Form extends Component {
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                         title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
                         required
+                        placeholder="Enter your name"
                         value={name}
-                        onChange={this.handleChange}
+                        onChange={handleChange}
                     />
                 </label>
                 <label>
@@ -47,8 +50,9 @@ class Form extends Component {
                         pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
                         title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
                         required
+                        placeholder="Enter your phone number"
                         value={number}
-                        onChange={this.handleChange}
+                        onChange={handleChange}
                     />
                 </label>
                 <button type="submit">Add contact</button>

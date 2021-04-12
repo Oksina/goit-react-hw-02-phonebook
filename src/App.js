@@ -14,20 +14,26 @@ class App extends Component {
         ],
         filter: '',
     };
-    formSubmitHandler = e => {
-        //this.setState({
-        //    contacts: '',
-        //});
-        //const {contacts} = this.state;
-    };
-    render() {
+
+    formSubmitHandler = (data) => {
         const { contacts } = this.state;
+        this.setState(prevState => ({contacts: [ data, ...prevState,contacts]}));
+    };
+    getVisibleContacts = (e) =>{
+console.log(e)
+        
+    }
+    render() {
+        const {formSubmitHandler} = this;
+        //const visibleContacts = this.getVisibleContacts();
         return (
             <div>
                 <h1>Phonebook</h1>
-                <Form onSubmit={this.formSubmitHandler} />
+                <Form onSubmit={formSubmitHandler}/>
                 <h2>Contacts </h2>
-                <List contacts={contacts} />
+                <List  
+                //contacts={visibleContacts}
+                deleteContact={this.deleteContact}/>
             </div>
         );
     }
