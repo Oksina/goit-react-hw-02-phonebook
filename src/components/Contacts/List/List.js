@@ -9,7 +9,6 @@ class List extends Component {
             <ul>
                 <ListItem />
                 contacts={contacts}
-                
             </ul>
         );
     }

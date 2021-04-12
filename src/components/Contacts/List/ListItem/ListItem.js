@@ -5,11 +5,11 @@ class ListItem extends Component {
     render() {
         const { contacts } = this.props;
         return contacts.map(contact => {
-           const { name, number, id } = contact;
+            const { name, number, id } = contact;
             return (
                 <li key={id}>
                     <p>{name} </p>
-                   <p>{number}</p>
+                    <p>{number}</p>
                 </li>
             );
         });

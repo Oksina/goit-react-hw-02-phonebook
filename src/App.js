@@ -15,25 +15,30 @@ class App extends Component {
         filter: '',
     };
 
-    formSubmitHandler = (data) => {
+    formSubmitHandler = data => {
         const { contacts } = this.state;
-        this.setState(prevState => ({contacts: [ data, ...prevState,contacts]}));
+        this.setState(prevState => ({
+            contacts: [data, ...prevState, contacts],
+        }));
     };
-    getVisibleContacts = (e) =>{
-console.log(e)
-        
-    }
+    getVisibleContacts = e => {
+        console.log(e);
+    };
+    deleteContact = ({ name }) => {
+        this.setState(prevState => ({}));
+    };
     render() {
-        const {formSubmitHandler} = this;
+        const { formSubmitHandler } = this;
         //const visibleContacts = this.getVisibleContacts();
         return (
             <div>
                 <h1>Phonebook</h1>
-                <Form onSubmit={formSubmitHandler}/>
+                <Form onSubmit={formSubmitHandler} />
                 <h2>Contacts </h2>
-                <List  
-                //contacts={visibleContacts}
-                deleteContact={this.deleteContact}/>
+                <List
+                    //contacts={visibleContacts}
+                    deleteContact={this.deleteContact}
+                />
             </div>
         );
     }
