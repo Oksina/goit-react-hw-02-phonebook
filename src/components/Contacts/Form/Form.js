@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as nameId } from 'uuid';
+
+import s from './Form.module.css';
 nameId();
 
 class Form extends Component {
@@ -27,7 +29,7 @@ class Form extends Component {
         const { handleSubmit, handleChange } = this;
 
         return (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={s.form}>
                 <label>
                     Name
                     <input
@@ -38,6 +40,7 @@ class Form extends Component {
                         placeholder="Name"
                         value={name}
                         onChange={handleChange}
+                        className={s.input}
                     />
                 </label>
                 <label>
@@ -50,9 +53,12 @@ class Form extends Component {
                         placeholder="Number"
                         value={number}
                         onChange={handleChange}
+                        className={s.input}
                     />
                 </label>
-                <button type="submit">Add contact</button>
+                <button type="submit" className={s.button}>
+                    Add contact
+                </button>
             </form>
         );
     }

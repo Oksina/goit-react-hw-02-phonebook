@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import s from './Filter.module.css';
 
 const Filter = ({ value, onChange }) => {
     return (
         <div>
-            <label>
+            <label className={s.label}>
                 Find contacts by name
                 <input
                     type="text"
@@ -12,6 +13,7 @@ const Filter = ({ value, onChange }) => {
                     placeholder="Name"
                     onChange={onChange}
                     value={value}
+                    className={s.input}
                 />
             </label>
         </div>

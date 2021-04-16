@@ -16,8 +16,14 @@ code {
 html {
     box-sizing: border-box;
     margin: 10px;
+    border: none;
 }
 .body {
     margin: 20px;
     padding: 20px;
+}
+.main {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

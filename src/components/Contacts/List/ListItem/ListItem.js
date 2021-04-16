@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import s from './ListItem.module.css';
+
 const ListItem = ({ contacts, deleteContact }) => {
     //const { name, number, id } = contact;
     return contacts.map(contact => {
         const { name, number, id } = contact;
         return (
-            <li key={id}>
-                <p>{name}: </p>
-                <p>{number}: </p>
-                <button type="button" onClick={() => deleteContact(id)}>
+            <li key={id} className={s.item}>
+                <p className={s.name}>{name}: </p>
+                <p>{number} </p>
+                <button
+                    type="button"
+                    onClick={() => deleteContact(id)}
+                    className={s.button}
+                >
                     Delete
                 </button>
             </li>

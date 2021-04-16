@@ -4,6 +4,7 @@ import List from './components/Contacts/List/List';
 import Filter from './components/Filter/Filter';
 
 import './index.css';
+import './App.css';
 
 class App extends Component {
     state = {
@@ -64,7 +65,7 @@ class App extends Component {
         } = this;
         const { filter } = this.state;
         return (
-            <div>
+            <div className="main">
                 <h1>Phonebook</h1>
                 <Form onSubmit={formSubmitHandler} />
                 <h2>Contacts </h2>
